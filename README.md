@@ -1,6 +1,6 @@
 # A Little Ocean of Wishes
 
-A small birthday website for Anzela, made with React, TypeScript, Vite, and standard CSS. The site is a static frontend: it needs no backend, account, API key, or paid service.
+A small birthday website for Anzela Raissa Widya Anandia, made with React, TypeScript, Vite, and standard CSS. The site is a static frontend: it needs no backend, account, API key, or paid service.
 
 ## Edit the birthday messages
 

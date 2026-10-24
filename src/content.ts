@@ -5,7 +5,7 @@
 export const birthdayContent = {
   date: 'October 27, 2026',
   letter: [
-    "Happy birthday, Anzela! I hope there's something good to eat, a bit of time to yourself, and at least one thing today that makes you laugh.",
+    "Happy birthday, Anzela Raissa Widya Anandia! I hope there's something good to eat, a bit of time to yourself, and at least one thing today that makes you laugh.",
     "I hope this next year brings you good health, good people, and interesting things to learn and do. The fifth semester is a lot to hold, so I hope you get to notice the small wins along the way. You don't need to have the whole plan sorted out right now.",
     "Have a lovely birthday, and I hope the year ahead treats you well."
   ],

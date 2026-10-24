@@ -102,7 +102,7 @@ function App() {
           <div className="entrance-content">
             <p className="eyebrow entrance-eyebrow"><span className="eyebrow-dot" /> A LITTLE OCEAN OF WISHES</p>
             <p className="entrance-date">OCTOBER 27, 2026</p>
-            <h1>For Anzela,<br /><em>on her special day.</em></h1>
+            <h1>For Anzela Raissa<br />Widya Anandia,<br /><em>on her special day.</em></h1>
             <p className="entrance-copy">A tiny corner of the ocean, made just for you.</p>
             <button className="dive-button" onClick={diveIn}>
               <span>Let's dive in</span><span className="button-arrow" aria-hidden="true">↓</span>
@@ -140,7 +140,7 @@ function App() {
           <section className="letter-section section-wrap" id="birthday">
             <div className="section-heading reveal">
               <p className="eyebrow"><span className="eyebrow-dot" /> A NOTE FOR YOU</p>
-              <h2>Hey, Anzela.<br /><em>Happy Birthday!</em></h2>
+              <h2>Hey, Anzela Raissa Widya Anandia.<br /><em>Happy Birthday!</em></h2>
               <p className="section-intro">A small note for the start of another trip around the sun.</p>
             </div>
             <article className="letter-card reveal">
@@ -265,9 +265,9 @@ function App() {
             <div className="ending-stars" aria-hidden="true"><i /><i /><i /><i /><i /></div>
             <div className="ending-horizon" aria-hidden="true"><span /></div>
             <div className="ending-content section-wrap reveal">
-              <h2>One more thing,<br /><em>Anzela...</em></h2>
+              <h2>One more thing,<br /><em>Anzela Raissa Widya Anandia...</em></h2>
               <p className="ending-message">{birthdayContent.closing}</p>
-              <p className="closing-greeting">Happy Birthday, Anzela <span aria-hidden="true">🌊</span></p>
+              <p className="closing-greeting">Happy Birthday, Anzela Raissa Widya Anandia <span aria-hidden="true">🌊</span></p>
               <a className="back-to-beginning" href="#top">Back to the beginning <span aria-hidden="true">↑</span></a>
             </div>
             <footer>
