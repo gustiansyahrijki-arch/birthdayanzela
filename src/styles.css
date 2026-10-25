@@ -324,3 +324,40 @@ button { color: inherit; }
   .ending-content h2 { font-size: 44px; }
   .ending-section footer { gap: 18px; font-size: 7px; }
 }
+
+.soundtrack-section {
+  display: grid;
+  grid-template-columns: .72fr 1.28fr;
+  gap: clamp(42px, 7vw, 92px);
+  align-items: center;
+  padding-top: 62px;
+  padding-bottom: 67px;
+  border-top: 1px solid rgba(159,205,200,.18);
+  border-bottom: 1px solid rgba(159,205,200,.18);
+}
+.soundtrack-heading h2 { margin: 20px 0 14px; color: #f2f4ea; font-family: var(--serif); font-size: clamp(34px, 4vw, 47px); font-weight: 400; line-height: 1.16; }
+.soundtrack-heading h2 em { color: var(--cyan); font-weight: 400; }
+.soundtrack-player { min-width: 0; }
+.track-options { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 25px; }
+.track-option { position: relative; display: grid; gap: 5px; min-width: 0; padding: 15px 3px 14px 15px; border: 0; border-top: 1px solid rgba(166,213,202,.26); color: #a8c3c4; text-align: left; background: transparent; cursor: pointer; transition: border-color .2s ease, color .2s ease; }
+.track-option::before { position: absolute; top: 22px; left: 0; width: 5px; height: 5px; border: 1px solid #779b9b; border-radius: 50%; content: ''; }
+.track-option:hover, .track-option-selected { border-color: rgba(165,224,207,.68); color: #e9f5f1; }
+.track-option-selected::before { border-color: #9adbd4; background: #9adbd4; }
+.track-title { overflow-wrap: anywhere; color: #e9f5f1; font-family: var(--serif); font-size: 18px; line-height: 1.25; }
+.track-artist { color: #91afb0; font-size: 11px; line-height: 1.4; }
+.track-status { margin: 16px 0 9px; color: #91afb0; font-size: 10px; }
+.apple-music-player { display: block; width: 100%; height: 175px; border: 0; background: #0b2634; }
+.external-listen { display: inline-flex; align-items: center; gap: 12px; margin-top: 11px; color: #a9d8cb; font-size: 10px; text-decoration: none; }
+.external-listen:hover { color: #e8f4e8; }
+.external-listen span { color: #d1e9d8; font-size: 14px; }
+
+@media (max-width: 800px) {
+  .soundtrack-section { grid-template-columns: 1fr; gap: 25px; padding-top: 49px; padding-bottom: 52px; }
+}
+
+@media (max-width: 520px) {
+  .track-options { gap: 0 14px; }
+  .track-option { padding-right: 0; }
+  .track-title { font-size: 16px; }
+  .apple-music-player { height: 175px; }
+}

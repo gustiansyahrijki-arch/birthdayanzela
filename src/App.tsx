@@ -3,6 +3,24 @@ import { birthdayContent } from './content';
 
 type Note = (typeof birthdayContent.openWhen)[number];
 type Creature = 'turtle' | 'jellyfish' | 'fish';
+type TrackId = 'seasons' | 'about-you';
+
+const soundtrackOptions: { id: TrackId; title: string; artist: string; embedUrl: string; listenUrl: string }[] = [
+  {
+    id: 'seasons',
+    title: 'seasons',
+    artist: 'wave to earth',
+    embedUrl: 'https://embed.music.apple.com/us/album/seasons/1781856626?i=1781856632&theme=dark',
+    listenUrl: 'https://music.apple.com/us/album/seasons/1781856626?i=1781856632'
+  },
+  {
+    id: 'about-you',
+    title: 'About You',
+    artist: 'The 1975',
+    embedUrl: 'https://embed.music.apple.com/us/album/about-you/1850018862?i=1850019038&theme=dark',
+    listenUrl: 'https://music.apple.com/us/album/about-you/1850018862?i=1850019038'
+  }
+];
 
 const navItems = [
   { label: 'The letter', href: '#birthday' },
@@ -18,7 +36,9 @@ function App() {
   const [burst, setBurst] = useState(0);
   const [showTop, setShowTop] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [selectedTrackId, setSelectedTrackId] = useState<TrackId>('seasons');
   const dialogRef = useRef<HTMLDialogElement>(null);
+  const selectedTrack = soundtrackOptions.find((track) => track.id === selectedTrackId)!;
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -157,6 +177,44 @@ function App() {
                 </svg>
               </div>
             </article>
+          </section>
+
+          <section className="soundtrack-section section-wrap" aria-labelledby="soundtrack-title">
+            <div className="soundtrack-heading">
+              <p className="eyebrow"><span className="eyebrow-dot" /> A LITTLE SOUNDTRACK</p>
+              <h2 id="soundtrack-title">Settle into<br /><em>the moment.</em></h2>
+              <p className="section-intro">Choose a song, then press play in the Apple Music player.</p>
+            </div>
+            <div className="soundtrack-player">
+              <div className="track-options" role="group" aria-label="Choose a soundtrack">
+                {soundtrackOptions.map((track) => (
+                  <button
+                    className={`track-option ${selectedTrackId === track.id ? 'track-option-selected' : ''}`}
+                    key={track.id}
+                    type="button"
+                    aria-pressed={selectedTrackId === track.id}
+                    onClick={() => setSelectedTrackId(track.id)}
+                  >
+                    <span className="track-title">{track.title}</span>
+                    <span className="track-artist">{track.artist}</span>
+                  </button>
+                ))}
+              </div>
+              <p className="track-status" aria-live="polite">Selected · ready in Apple Music</p>
+              <iframe
+                key={selectedTrack.id}
+                className="apple-music-player"
+                title={`Apple Music player: ${selectedTrack.title} by ${selectedTrack.artist}`}
+                src={selectedTrack.embedUrl}
+                width="100%"
+                height="175"
+                allow="encrypted-media"
+                loading="lazy"
+              />
+              <a className="external-listen" href={selectedTrack.listenUrl} target="_blank" rel="noreferrer">
+                Open {selectedTrack.title} in Apple Music <span aria-hidden="true">↗</span>
+              </a>
+            </div>
           </section>
 
           <section className="notes-section section-wrap" id="notes">
